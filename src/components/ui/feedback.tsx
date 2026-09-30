@@ -1,0 +1,5 @@
+import type { ReactNode } from "react"; import { cn } from "@/lib/utils";
+export function Badge({tone="default",children}:{tone?:"default"|"success"|"warning"|"danger";children:ReactNode}){return <span className={cn("vf-badge",tone!=="default"&&tone)}>{children}</span>}
+export function ProgressBar({value,label}:{value:number;label?:string}){const safe=Math.min(100,Math.max(0,value));return <div aria-label={label} aria-valuemax={100} aria-valuemin={0} aria-valuenow={safe} role="progressbar" className="vf-progress"><span style={{width:`${safe}%`}}/></div>}
+export function Alert({title,children,tone="default"}:{title:string;children:ReactNode;tone?:"default"|"warning"|"danger"}){return <div className={cn("vf-alert",tone)} role="alert"><span>{tone==="danger"?"!":"i"}</span><div><strong>{title}</strong><br/>{children}</div></div>}
+export function Skeleton({className,style}:{className?:string;style?:React.CSSProperties}){return <div aria-hidden="true" className={cn("vf-skeleton",className)} style={style}/>}

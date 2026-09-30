@@ -1,0 +1,3 @@
+import { AppNav } from "@/components/app-nav";
+const supported = new Set(["profile", "providers", "youtube"]);
+export default async function SettingsPage({ params }: { params: Promise<{ section: string }> }) { const { section } = await params; const title = supported.has(section) ? section[0].toUpperCase() + section.slice(1) : "Settings"; return <><AppNav /><main className="shell"><section className="panel route-card"><div className="eyebrow">Settings</div><h1>{title}</h1><p className="subtle">This section is reserved for a secure, server-managed configuration. Provider keys and OAuth tokens will never be placed in browser code.</p></section></main></>; }

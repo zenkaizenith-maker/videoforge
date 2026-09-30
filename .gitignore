@@ -1,0 +1,16 @@
+node_modules
+.next
+.env.local
+.env*.local
+!.env.example
+*.tsbuildinfo
+*.log
+test-*.cjs
+test-*.js
+inspect-schema.cjs
+notepadkey.txt
+.opencode
+supabase/.temp
+scripts/test-management-api.mjs
+scripts/test-studio-api.mjs
+

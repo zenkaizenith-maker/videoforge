@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: videoforge-render-worker
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 4100
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SECRET_KEY
+        sync: false
+      - key: WORKER_SHARED_SECRET
+        sync: false
